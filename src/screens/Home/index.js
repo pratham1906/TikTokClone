@@ -1,14 +1,14 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
-
-const index = () => {
+import Post from '../../components/Post/index'
+const HomeScreen = () => {
     return (
-        <View>
-            <Text>HomeScreen</Text>
-        </View>
+       <View style={{flex:1}}>
+            <Post/>
+            </View>
     )
 }
 
-export default index
+export default HomeScreen
 
 const styles = StyleSheet.create({})

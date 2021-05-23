@@ -11,13 +11,11 @@ const post1 = {
   },
   description: 'hahahha oh boy @borat',
   song: 'NF -The search',
-  songImage: '',
   likes: 123,
   comments: 12,
   shares: 44,
-  videoUri:
-    'https://d8vywknz0hvjw.cloudfront.net/fitenium-media-prod/videos/45fee890-a74f-11ea-8725-311975ea9616/proccessed_720.mp4',
-    songImage:'https://pbs.twimg.com/profile_images/1223706175910211584/tmu8d9fA_400x400.jpg'
+  videoUri:'https://d8vywknz0hvjw.cloudfront.net/fitenium-media-prod/videos/45fee890-a74f-11ea-8725-311975ea9616/proccessed_720.mp4',
+songImage:'https://pbs.twimg.com/profile_images/1223706175910211584/tmu8d9fA_400x400.jpg'
 };
 const HomeScreen = () => {
   return (

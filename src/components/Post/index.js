@@ -28,7 +28,7 @@ const [isLiked,setIsLiked]=useState(false);
     ...post,
     likes:post.likes+likesToAdd
   })
-  setIsLiked(!likesToAdd)
+  setIsLiked(!isLiked)
   }
   return (
     <View style={styles.container}>
@@ -70,9 +70,8 @@ const [isLiked,setIsLiked]=useState(false);
           <View style={styles.iconContainer}>
             <TouchableOpacity onPress={onLikePress}>
             <AntDesign name="heart" size={30} color={isLiked?'red':'white'} />
-            </TouchableOpacity>
             <Text style={styles.statsLabel}>{post.likes}</Text>
-
+            </TouchableOpacity>
           </View>
           <View style={styles.iconContainer}>
             <FontAwesome name="commenting" size={30} color="white" />
@@ -89,7 +88,7 @@ const [isLiked,setIsLiked]=useState(false);
             padding: 10,
             flexDirection: 'row',
             justifyContent: 'space-between',
-            alignItems: 'flex-end',
+            alignItems: 'flex-end'
           }}>
           <View>
             <Text
@@ -112,14 +111,14 @@ const [isLiked,setIsLiked]=useState(false);
             </Text>
 
             <View
-              style={{flexDirection: 'row', justifyContent: 'space-evenly'}}>
+              style={{flexDirection: 'row',alignItems:'center'}}>
               <Entypo name="beamed-note" size={24} color="white" />
-              <Text style={{color: 'white', fontSize: 16, marginLeft: 5}}>
-               {post.songName}
+              <Text style={{color: 'white', fontSize: 16,marginLeft:5}}>
+               {post.song}
               </Text>
             </View>
           </View>
-
+          
           <Image
             source={{
               uri: post.songImage,

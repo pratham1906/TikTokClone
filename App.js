@@ -6,9 +6,9 @@ const App = () => {
   return (
     <>
     <StatusBar barStyle="dark-content"/>
-    <SafeAreaView>
+   <SafeAreaView>
 <HomeScreen/>
-    </SafeAreaView>
+</SafeAreaView>
     </>
   )
 }

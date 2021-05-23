@@ -5,6 +5,8 @@ import {
   Text,
   TouchableWithoutFeedback,
   View,
+  TouchableOpacity,
+  Touchable
 } from 'react-native';
 import Video from 'react-native-video';
 import Entypo from 'react-native-vector-icons/Entypo';
@@ -13,12 +15,21 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import styles from './styles';
 const Post = (props) => {
-const {post}=props;
+const [post,setPost]=useState(props.post)
+const [isLiked,setIsLiked]=useState(false);
 
   const [paused, setPaused] = useState(false);
   const onplayPausePress = () => {
     setPaused(!paused);
   };
+  const onLikePress=()=>{
+    const likesToAdd=isLiked?-1:+1;
+  setPost({
+    ...post,
+    likes:post.likes+likesToAdd
+  })
+  setIsLiked(!likesToAdd)
+  }
   return (
     <View style={styles.container}>
       <TouchableWithoutFeedback onPress={onplayPausePress}>
@@ -57,8 +68,11 @@ const {post}=props;
           />
 
           <View style={styles.iconContainer}>
-            <AntDesign name="heart" size={30} color="white" />
+            <TouchableOpacity onPress={onLikePress}>
+            <AntDesign name="heart" size={30} color={isLiked?'red':'white'} />
+            </TouchableOpacity>
             <Text style={styles.statsLabel}>{post.likes}</Text>
+
           </View>
           <View style={styles.iconContainer}>
             <FontAwesome name="commenting" size={30} color="white" />

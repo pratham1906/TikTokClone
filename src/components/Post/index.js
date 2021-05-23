@@ -54,9 +54,7 @@ const [isLiked,setIsLiked]=useState(false);
             marginRight: 5,
           }}>
           <Image
-            source={{
-              uri:post.user.imageUri,
-            }}
+           
             style={{
               width: 50,
               height: 50,
@@ -64,6 +62,9 @@ const [isLiked,setIsLiked]=useState(false);
               borderWidth: 2,
               borderColor: 'white',
               alignSelf: 'center',
+            }}
+            source={{
+              uri:post.user.imageUri,
             }}
           />
 
@@ -121,7 +122,7 @@ const [isLiked,setIsLiked]=useState(false);
           
           <Image
             source={{
-              uri: post.songImage,
+              uri:post.songImage,
             }}
             style={{
               width: 50,
